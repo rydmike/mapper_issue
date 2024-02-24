@@ -1,0 +1,26 @@
+global_options:
+  freezed:
+    runs_before:
+      - json_serializable
+      - retrofit_generator
+      - chopper_generator
+  json_serializable:
+    runs_before:
+      - retrofit_generator
+      - chopper_generator
+  dart_mappable_builder:
+    runs_before:
+      - retrofit_generator
+      - chopper_generator
+    options:
+      caseStyle: snakeCase # fits the target imaginary API
+      ignoreNull: false
+      discriminatorKey: type
+      generateMethods: [decode, encode, copy, stringify, equals]
+      # Use the rename options feature to make the generated code
+      #compatible with retrofit and chopper
+      renameMethods:
+        fromJson: deserialize
+        toJson: serialize
+        fromMap: fromJson
+        toMap: toJson
