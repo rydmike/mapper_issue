@@ -20,15 +20,12 @@ BillableFr _$BillableFrFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BillableFr {
-  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_date')
   DateTime get createdDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'state')
   BillableStatus get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'due_date')
   DateTime? get dateDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'comment')
   String get comment => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,11 +41,11 @@ abstract class $BillableFrCopyWith<$Res> {
       _$BillableFrCopyWithImpl<$Res, BillableFr>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
+      {int id,
       @JsonKey(name: 'created_date') DateTime createdDate,
-      @JsonKey(name: 'state') BillableStatus status,
+      BillableStatus status,
       @JsonKey(name: 'due_date') DateTime? dateDate,
-      @JsonKey(name: 'comment') String comment});
+      String comment});
 }
 
 /// @nodoc
@@ -104,11 +101,11 @@ abstract class _$$BillableFrImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
+      {int id,
       @JsonKey(name: 'created_date') DateTime createdDate,
-      @JsonKey(name: 'state') BillableStatus status,
+      BillableStatus status,
       @JsonKey(name: 'due_date') DateTime? dateDate,
-      @JsonKey(name: 'comment') String comment});
+      String comment});
 }
 
 /// @nodoc
@@ -157,29 +154,28 @@ class __$$BillableFrImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BillableFrImpl implements _BillableFr {
   const _$BillableFrImpl(
-      {@JsonKey(name: 'id') required this.id,
+      {required this.id,
       @JsonKey(name: 'created_date') required this.createdDate,
-      @JsonKey(name: 'state') this.status = BillableStatus.billable,
+      this.status = BillableStatus.billable,
       @JsonKey(name: 'due_date') this.dateDate,
-      @JsonKey(name: 'comment') this.comment = ''});
+      this.comment = ''});
 
   factory _$BillableFrImpl.fromJson(Map<String, dynamic> json) =>
       _$$BillableFrImplFromJson(json);
 
   @override
-  @JsonKey(name: 'id')
   final int id;
   @override
   @JsonKey(name: 'created_date')
   final DateTime createdDate;
   @override
-  @JsonKey(name: 'state')
+  @JsonKey()
   final BillableStatus status;
   @override
   @JsonKey(name: 'due_date')
   final DateTime? dateDate;
   @override
-  @JsonKey(name: 'comment')
+  @JsonKey()
   final String comment;
 
   @override
@@ -222,29 +218,26 @@ class _$BillableFrImpl implements _BillableFr {
 
 abstract class _BillableFr implements BillableFr {
   const factory _BillableFr(
-      {@JsonKey(name: 'id') required final int id,
+      {required final int id,
       @JsonKey(name: 'created_date') required final DateTime createdDate,
-      @JsonKey(name: 'state') final BillableStatus status,
+      final BillableStatus status,
       @JsonKey(name: 'due_date') final DateTime? dateDate,
-      @JsonKey(name: 'comment') final String comment}) = _$BillableFrImpl;
+      final String comment}) = _$BillableFrImpl;
 
   factory _BillableFr.fromJson(Map<String, dynamic> json) =
       _$BillableFrImpl.fromJson;
 
   @override
-  @JsonKey(name: 'id')
   int get id;
   @override
   @JsonKey(name: 'created_date')
   DateTime get createdDate;
   @override
-  @JsonKey(name: 'state')
   BillableStatus get status;
   @override
   @JsonKey(name: 'due_date')
   DateTime? get dateDate;
   @override
-  @JsonKey(name: 'comment')
   String get comment;
   @override
   @JsonKey(ignore: true)

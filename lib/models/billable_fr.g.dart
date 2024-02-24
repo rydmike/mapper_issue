@@ -10,7 +10,7 @@ _$BillableFrImpl _$$BillableFrImplFromJson(Map<String, dynamic> json) =>
     _$BillableFrImpl(
       id: json['id'] as int,
       createdDate: DateTime.parse(json['created_date'] as String),
-      status: $enumDecodeNullable(_$BillableStatusEnumMap, json['state']) ??
+      status: $enumDecodeNullable(_$BillableStatusEnumMap, json['status']) ??
           BillableStatus.billable,
       dateDate: json['due_date'] == null
           ? null
@@ -22,7 +22,7 @@ Map<String, dynamic> _$$BillableFrImplToJson(_$BillableFrImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'created_date': instance.createdDate.toIso8601String(),
-      'state': _$BillableStatusEnumMap[instance.status]!,
+      'status': _$BillableStatusEnumMap[instance.status]!,
       'due_date': instance.dateDate?.toIso8601String(),
       'comment': instance.comment,
     };
