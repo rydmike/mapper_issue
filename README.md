@@ -40,6 +40,9 @@ global_options:
         toMap: toJson
 ```
 
+There is also an issue in the `dart_mappable` with more info and hisotry about this topc https://github.com/schultek/dart_mappable/issues/82
+
+
 This example contains three fictive model classes:
 
 - `BillableJs` made with only `JsonSerializable`
